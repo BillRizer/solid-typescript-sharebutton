@@ -1,8 +1,17 @@
-import { ShareButton } from "./share-button";
+import { ShareButtonFacebook } from "./ShareButtonFacebook";
+import { ShareButtonLinkedin } from "./ShareButtonLinkedin";
+import { ShareButtonPinterest } from "./ShareButtonPinterest";
+import { ShareButtonTwitter } from "./ShareButtonTwitter";
 
 const url = "https://www.linkedin.com/pablo.telis";
-const shareButton = new ShareButton(url);
-shareButton.bind("btn-twitter", "twitter");
-shareButton.bind("btn-facebook", "facebook");
-shareButton.bind("btn-linkedin", "linkedin");
-shareButton.bind("btn-pinterest", "pinterest");
+const twitter = new ShareButtonTwitter('.btn-twitter',url);
+twitter.bind()
+
+const facebook = new ShareButtonFacebook('.btn-facebook',url);
+facebook.bind()
+
+const linkedin = new ShareButtonLinkedin('.btn-linkedin',url);
+linkedin.bind()
+
+const pinterest = new ShareButtonPinterest('.btn-pinterest',url);
+pinterest.bind()
