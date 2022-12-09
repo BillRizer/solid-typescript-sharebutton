@@ -44,3 +44,18 @@ As instancias de `ShareButtonAlert`, `SharedButtonPrinter` e `SharedButtonFacebo
 
 Assim elas sao compativeis com `AbstractShareButton` sem deixar de implementar algum metodo por nao precisar daquela funcionalidade, como seria se `SharedButtonPrinter` possuisse um metodo de *createLink()*, uma vez que para impressao nao precisa do link
 
+## 6 passo - Dependency Inversion Principle (DIP)
+deve-se sempre depender das abstracoes e nao das implementacoes, abstracoes mudam menos, facilitam a evolucao de codigo e mudança de comportamento.
+> "Modulos de alto nivel nao devem depender de modulos de baixo nivel, ambos devem depender da abstração"
+
+Com a utilização do **Dependency inversion** nossa classe nao depende da implementacao do `EventHandler` e sim do seu contrato (interface). podemos facilmente extender nosso `EventHandler` para outra implementacao. basta injetarmos esta dependencia na nova instancia da classe.
+
+criei a classe `LogEventHandler` para demonstrar o quao facil é mudar a dependencia quando ela nao esta acoplada na classe, basta injetar uma dependencia que respeita o contrato exigido e pronto.
+
+O exemplo é simples mas valido, agora temos nosso codigo com os principios do SOLID aplicados.
+
+Mas agora vem a boa e velha discussao, ate que ponto vale a pena criarmos um codigo tao robusto para uma coisa tao simples, neste exemplo poderiamos deixar como estava no primeiro commit, tudo martelado no index e tudo certo, pode ser valido, depende da estrategia.
+
+Porem o intuito deste simples repo foi demonstrar como aplicar estes conceitos e explica-los de forma simples.
+
+[]

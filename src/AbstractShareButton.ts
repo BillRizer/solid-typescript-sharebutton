@@ -1,17 +1,17 @@
-import { EventHandler } from "./EventHandler";
+import IEventHandler from "./EventHandler.interface";
 
 export abstract class AbstractShareButton {
   className;
   eventHandler;
-  constructor(className: string) {
+  constructor(className: string, eventHandler: IEventHandler) {
     this.className = className;
-    this.eventHandler = new EventHandler();
+    this.eventHandler = eventHandler
   }
 
-  abstract createAction():any;
- 
+  abstract createAction(): any;
+
   bind() {
-      const action = this.createAction();
-      this.eventHandler.addEventListenerToClass(this.className, "click",action);
-    }
+    const action = this.createAction();
+    this.eventHandler.addEventListenerToClass(this.className, "click", action);
+  }
 }

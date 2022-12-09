@@ -1,9 +1,10 @@
 import AbstractFnShareButton from "./AbstractFnShareButton";
+import IEventHandler from "./EventHandler.interface";
 
 export class ShareButtonAlert extends AbstractFnShareButton {
   message: string;
-  constructor(className: string, message: string) {
-    super(className);
+  constructor(eventHandler: IEventHandler, className: string, message: string) {
+    super(className, eventHandler);
     this.message = message;
   }
 

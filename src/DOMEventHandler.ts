@@ -1,4 +1,6 @@
-export class EventHandler {
+import IEventHandler from "./EventHandler.interface";
+
+export class DOMEventHandler implements IEventHandler {
   public addEventListenerToClass(
     className: string,
     eventName: string,

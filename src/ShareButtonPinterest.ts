@@ -1,9 +1,10 @@
 import AbstractLinkShareButton from "./AbstractLInkShareButton";
+import IEventHandler from "./EventHandler.interface";
 
 export class ShareButtonPinterest extends AbstractLinkShareButton {
   url;
-  constructor(className: string, url: string) {
-    super(className);
+  constructor(eventHandler: IEventHandler,className: string, url: string) {
+    super(className, eventHandler);
     this.url = url;
   }
   createLink(): string {
