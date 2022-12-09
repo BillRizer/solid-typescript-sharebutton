@@ -1,13 +1,15 @@
-import AbstractAlertShareButton from "./AbstractAlertShareButton";
+import AbstractFnShareButton from "./AbstractFnShareButton";
 
-export class ShareButtonAlert extends AbstractAlertShareButton {
+export class ShareButtonAlert extends AbstractFnShareButton {
   message: string;
   constructor(className: string, message: string) {
     super(className);
     this.message = message;
   }
 
-  createMessage(): string {
-    return `${this.message}`;
+  createAction() {
+    return () => {
+      alert(`${this.message}`);
+    };
   }
 }

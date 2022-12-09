@@ -32,17 +32,15 @@ A forma correta é que uma classe mais especialista como  ``AbstractLinkShareBut
 Uma sub classe não pode quebrar as espectativas estabelecidas por uma super classe.
 > "Se S é um subtipo de T, então os objetos do tipo T, em um programa, podem ser substituídos pelos objetos de tipo S sem que seja necessário alterar as propriedades deste programa"
 
-## 5 - interface segregation (ISP)
+## 5 passo - interface segregation (ISP)
 Uma interface nao deve forcar uma classe a implementar coisas que ela nao ultiliza, interfaces (gordas) geralmente se espalham pelo sistema trazendo complexidade e dificuldade de manutenção.
 
 As instancias de `ShareButtonAlert`, `SharedButtonPrinter` e `SharedButtonFacebook` **possuem coportamentos** diferentes e por isso não podem extender diretamente da classe `AbstractShareButton`, deve haver uma abstração intermediaria para que uma instancia de `ShareButtonAlert` seja compativel com a classe `AbstractShareButto` **(LSP)**
 
  para resolver isto foi criada uma classe abstrata extendendo a `AbstractShareButton` para cada comportamento diferente, como:
 
-- `windows.print()`  no compartilhamento por impressora
-- `alert()` no compartilhamento por popup 
+- `windows.print()` e `alert()` (function) no compartilhamento por impressora ou popup 
 - `windows.open()` para compartilhamento por link
 
 Assim elas sao compativeis com `AbstractShareButton` sem deixar de implementar algum metodo por nao precisar daquela funcionalidade, como seria se `SharedButtonPrinter` possuisse um metodo de *createLink()*, uma vez que para impressao nao precisa do link
 
- 
